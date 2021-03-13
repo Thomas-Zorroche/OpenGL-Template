@@ -27,7 +27,7 @@ int main(void)
         return -1;
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(width, height, "OpenGL <3", NULL, NULL);
+    window = glfwCreateWindow(width, height, "OpenGL", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -43,27 +43,6 @@ int main(void)
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
-
-    // Shaders Sources
-    const char* vertexShaderSource = "#version 330 core \n"
-        "layout(location = 0) in vec3 position; \n"
-        "layout(location = 1) in vec2 in_TexCoord; \n"
-        "out vec2 TexCoord; \n"
-        "uniform mat4 u_MVP;\n"
-        "void main() \n"
-        "{\n"
-        "   gl_Position = u_MVP * vec4(position, 1.0); \n"
-        "   TexCoord = in_TexCoord;"  
-        "}";
-
-    const char* fragmentShaderSource = "#version 330 core \n"
-        "out vec4 color; \n"
-        "in vec2 TexCoord; \n"
-        "uniform sampler2D Texture; \n"
-        "void main() \n"
-        "{\n"
-        "color = texture(Texture, TexCoord); \n"
-        "}";
 
     // Attributs des Points
     float vertices[] = {
@@ -110,12 +89,6 @@ int main(void)
     -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
     };
 
-    // Indices
-    unsigned int indices[] = {
-        0, 1, 2, // Top Right Triangle
-        1, 3, 2  // Bottom Left Triangle
-    };
-
     // Generate Textures
     unsigned int texture;
     glGenTextures(1, &texture);
@@ -140,10 +113,9 @@ int main(void)
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    unsigned int VAO, VBO, IBO;
+    unsigned int VAO, VBO;
     glGenBuffers(1, &VAO);
     glGenBuffers(1, &VBO);
-    glGenBuffers(1, &IBO);
 
     glBindVertexArray(VAO);
         // Vertex Buffer Object
@@ -154,9 +126,6 @@ int main(void)
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
         glEnableVertexAttribArray(1);
         glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-        // Index Buffer Object
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
     glBindVertexArray(0);
 
     // Create Shaders
@@ -212,7 +181,6 @@ int main(void)
         glm::mat4 view;
         view = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
 
-
         // Transformations
         for (size_t i = 0; i < 10; i++)
         {
@@ -240,7 +208,6 @@ int main(void)
 
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
-    glDeleteBuffers(1, &IBO);
 
     glfwTerminate();
     return 0;
