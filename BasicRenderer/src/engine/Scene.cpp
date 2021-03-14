@@ -29,7 +29,7 @@ void Scene::Init()
 	// Init all static meshes
 	//=======================
 	Model m_sphere("res/models/sphere.obj");
-	StaticMesh sm_sphere(m_sphere, TransformLayout(glm::vec3(0, 0, 0)));
+	StaticMesh sm_sphere(m_sphere, TransformLayout(glm::vec3(0, 0, 0)), "DefaultLighting");
 	//sm_sphere.Scale(1);
 	AddStaticMesh(std::make_shared<StaticMesh>(sm_sphere));
 

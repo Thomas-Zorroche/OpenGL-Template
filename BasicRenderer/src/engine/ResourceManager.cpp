@@ -239,6 +239,9 @@ std::shared_ptr<Shader> ResourceManager::GetShader(const std::string& name)
 
 void ResourceManager::LoadAllShaders()
 {
+	// RGB Color -- Default shader
 	ResourceManager::Get().LoadShader("res/shaders/Default.vert", "res/shaders/Default.frag", "Default");
+	// RGB Color with Lights
+	ResourceManager::Get().LoadShader("res/shaders/Default.vert", "res/shaders/DefaultLighting.frag", "DefaultLighting");
 }
 
