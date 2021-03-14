@@ -4,8 +4,7 @@
 #include <iostream>
 #include "GLFW/glfw3.h"
 
-void InputHandler::ProcessInput(GLFWwindow* window, const std::shared_ptr<Camera>& camera, 
-    const std::shared_ptr<Game>& game, float deltaTime)
+void InputHandler::ProcessInput(GLFWwindow* window, const std::shared_ptr<Camera>& camera, float deltaTime)
 {
     // Close Window
     // ===================================================================================================

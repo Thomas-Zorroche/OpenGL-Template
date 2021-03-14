@@ -22,10 +22,9 @@ class Terrain;
 class Camera
 {
 public:
-	Camera(const std::shared_ptr<Terrain>& terrain);
+	Camera();
 	~Camera() {}
 
-	void updateBox();
 
 	void Move(float deltaTime, DIRCAM dir);
 
@@ -61,10 +60,6 @@ private:
 	void MoveX(float dst, const glm::vec3& dir);
 	void MoveZ(float dst, const glm::vec3& dir);
 
-	float _HeightCamera = 5.0f;
-
-	// Pointer to Terrain
-	std::shared_ptr<Terrain> _terrain;
 
 	glm::vec3 _Position;	  // Position of the camera
 	float _phi;
@@ -93,7 +88,4 @@ private:
 	float _heightScreen = 720.0;
 	float _nearPlane = 0.1f;
 	float _farPlane = 5000.0f;
-
-
-	bool _blockAxis[5] = { false };
 };

@@ -24,15 +24,10 @@ public:
 	// Useful for particule system
 	unsigned int GetVAO() const { return _meshes[0].GetVAO(); }
 
-	std::vector<ShapeVertex>& VerticesCBox(size_t index);
-
-	std::vector<Mesh>& CBoxes() { return _cBoxes; }
-
 	void Free();
 
 private:
 	std::vector<Mesh> _meshes;
-	std::vector<Mesh> _cBoxes;
 	std::string _directory;
 
 

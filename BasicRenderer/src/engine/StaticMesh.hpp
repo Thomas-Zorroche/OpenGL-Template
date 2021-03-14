@@ -38,7 +38,7 @@ class StaticMesh
 {
 public:
 	// Constructor
-	StaticMesh(const Model& model, const TransformLayout& transLayout, const std::string& shaderName);
+	StaticMesh(const Model& model, const TransformLayout& transLayout, const std::string& shaderName = "Default");
 
 	void Draw(bool isParticuleInstance = false, int countParticule = 0);
 

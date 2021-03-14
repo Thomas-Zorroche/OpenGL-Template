@@ -239,16 +239,6 @@ std::shared_ptr<Shader> ResourceManager::GetShader(const std::string& name)
 
 void ResourceManager::LoadAllShaders()
 {
-	ResourceManager::Get().LoadShader("res/shaders/3DTex.vert", "res/shaders/portal.frag", "Portal");
-	ResourceManager::Get().LoadShader("res/shaders/3DTex.vert", "res/shaders/Terrain.frag", "Terrain");
-	ResourceManager::Get().LoadShader("res/shaders/Ocean.vert", "res/shaders/Ocean.frag", "Ocean");
-	ResourceManager::Get().LoadShader("res/shaders/Skybox.vert", "res/shaders/Skybox.frag", "Skybox");
-	ResourceManager::Get().LoadShader("res/shaders/3DTex.vert", "res/shaders/model.frag", "Model3D_Tex");
-	ResourceManager::Get().LoadShader("res/shaders/3DTex.vert", "res/shaders/cbox.frag", "CBox");
-
-	ResourceManager::Get().LoadShader("res/shaders/3DTex_ui.vert", "res/shaders/ui.frag", "Ui");
-
-	ResourceManager::Get().LoadShader("res/shaders/Particule.vert", "res/shaders/modelAlpha.frag", "ParticuleAlpha");
-	ResourceManager::Get().LoadShader("res/shaders/Particule.vert", "res/shaders/model.frag", "Particule");
+	ResourceManager::Get().LoadShader("res/shaders/Default.vert", "res/shaders/Default.frag", "Default");
 }
 

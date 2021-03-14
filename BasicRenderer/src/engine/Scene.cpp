@@ -16,16 +16,22 @@
 #include <unordered_map>
 
 
-Scene::Scene(const std::shared_ptr<Game>& game)
+Scene::Scene()
 	:  _skybox(nullptr)
 {
-	Init(game);
+	Init();
 }
 
 Scene::~Scene() {}
 
-void Scene::Init(const std::shared_ptr<Game>& game)
+void Scene::Init()
 {
+	// Init all static meshes
+	//=======================
+	Model m_sphere("res/models/sphere.obj");
+	StaticMesh sm_sphere(m_sphere, TransformLayout(glm::vec3(0, 0, 0)));
+	//sm_sphere.Scale(1);
+	AddStaticMesh(std::make_shared<StaticMesh>(sm_sphere));
 
 	// Load All Lights
 	// =================

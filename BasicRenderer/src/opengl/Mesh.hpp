@@ -4,7 +4,7 @@
 #include <memory>
 #include "common.hpp"
 #include "opengl/Shader.h"
-//#include "engine/Material.hpp"
+#include "engine/Material.hpp"
 
 class Material;
 

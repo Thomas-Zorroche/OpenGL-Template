@@ -20,8 +20,7 @@ class InputHandler
 public:
 	InputHandler() = default;
 	
-	void ProcessInput(GLFWwindow* window, const std::shared_ptr<Camera>& camera, 
-		const std::shared_ptr<Game>& game, float deltaTime);
+	void ProcessInput(GLFWwindow* window, const std::shared_ptr<Camera>& camera, float deltaTime);
 
 	void SetCallback(GLFWwindow* window, CallbackPtr& callbackPtr);
 
@@ -48,9 +47,8 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 
 struct CallbackPtr
 {
-	std::shared_ptr<Game> _game;
 	std::shared_ptr<Camera> _camera;
 
-	CallbackPtr(const std::shared_ptr<Game>& game, const std::shared_ptr<Camera>& camera)
-		: _game(game), _camera(camera) {}
+	CallbackPtr(const std::shared_ptr<Camera>& camera)
+		: _camera(camera) {}
 };

@@ -7,15 +7,14 @@
 
 class StaticMesh;
 class Skybox;
-class Game;
 
 class Scene
 {
 public:
-	Scene(const std::shared_ptr<Game>& game);
+	Scene();
 	~Scene();
 
-	void Init(const std::shared_ptr<Game>& game);
+	void Init();
 
 	void Draw();
 
