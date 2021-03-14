@@ -115,5 +115,15 @@ void LightManager::LoadAllLights()
 		glm::vec3(0.5, 0.5, 0.5),
 		glm::vec3(1, 1, 1));
 
-	AddLight(dirLight, LightType::DIR);
+	//AddLight(dirLight, LightType::DIR);
+
+	// Point Light
+	// =========================================================================
+	std::shared_ptr<BaseLight> pointLight = std::make_shared<PointLight>(
+		10.0f,
+		glm::vec3(1, 0.6, 0),
+		glm::vec3(0, 0, 0), 
+		100);
+
+	AddLight(pointLight, LightType::POINT);
 }

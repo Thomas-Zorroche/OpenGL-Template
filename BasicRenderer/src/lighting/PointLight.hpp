@@ -10,7 +10,7 @@ public:
                const glm::vec3& color = glm::vec3(1.0, 1.0, 1.0),
                const glm::vec3& position = glm::vec3(0, 0, 0),
                float radius = 20.0f,
-               bool electricity = true);
+               bool electricity = false);
 
     // Getters
     const glm::vec3& Position() const { return _position; }

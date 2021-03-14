@@ -66,7 +66,7 @@ void main()
     finalColor += ComputeDirLight(material, dirLight, Normal_vs, viewDir_vs);
 
     for (int i = 0; i < POINT_LIGHTS_COUNT; i++)
-        //finalColor += ComputePointLight(material, pointLights[i], Normal_vs, vFragPos_vs, viewDir_vs);
+        finalColor += ComputePointLight(material, pointLights[i], Normal_vs, vFragPos_vs, viewDir_vs);
 
     // Texture
     //fFragColor = texture(texture_diffuse, vVertexTexcoords * uvScale) * vec4(finalColor, 1.0f);
