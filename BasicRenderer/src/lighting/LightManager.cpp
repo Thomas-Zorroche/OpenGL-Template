@@ -115,7 +115,7 @@ void LightManager::LoadAllLights()
 		glm::vec3(0.5, 0.5, 0.5),
 		glm::vec3(1, 1, 1));
 
-	//AddLight(dirLight, LightType::DIR);
+	AddLight(dirLight, LightType::DIR);
 
 	// Point Light
 	// =========================================================================
@@ -125,5 +125,5 @@ void LightManager::LoadAllLights()
 		glm::vec3(0, 0, 0), 
 		100);
 
-	AddLight(pointLight, LightType::POINT);
+	//AddLight(pointLight, LightType::POINT);
 }

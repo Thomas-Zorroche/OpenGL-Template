@@ -26,10 +26,9 @@ Scene::~Scene() {}
 
 void Scene::Init()
 {
-	// Init all static meshes
+	// Create all static meshes
 	//=======================
 	Model m_sphere("res/models/sphere.obj");
-	// Sun
 	StaticMesh sun(m_sphere, TransformLayout(glm::vec3(0, 0, 0)), "DefaultLighting");
 	sun.Scale(3);
 	StaticMesh earth(m_sphere, TransformLayout(glm::vec3(10, 0, 10)), "DefaultLighting");
@@ -44,11 +43,6 @@ void Scene::Init()
 
 void Scene::Draw()
 {
-	// Render the Skybox
-	// =================
-	//_skybox->Draw(_fog);
-	
-
 	// Render all the static meshes
 	// ============================
 	for (size_t i = 0; i < _staticMeshesCount; i++)
