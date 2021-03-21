@@ -46,7 +46,7 @@ elseif(UNIX AND NOT APPLE)
   find_package(X11 REQUIRED)
   # note that the order is important for setting the libs
   # use pkg-config --libs $(pkg-config --print-requires --print-requires-private glfw3) in a terminal to confirm
-  set(LIBS ${GLFW3_LIBRARY} X11 Xrandr Xinerama Xi Xcursor GL dl pthread ${ASSIMP_LIBRARY})
+  set(LIBS ${GLFW3_LIBRARY} X11 Xrandr Xinerama Xi Xcursor GL dl pthread ${ASSIMP_LIBRARIES})
   set (CMAKE_CXX_LINK_EXECUTABLE "${CMAKE_CXX_LINK_EXECUTABLE} -ldl")
 elseif(APPLE)
   INCLUDE_DIRECTORIES(/System/Library/Frameworks)
@@ -100,12 +100,6 @@ file(COPY ${CMAKE_SOURCE_DIR}/res/img/
 # Add Models
 file(COPY ${CMAKE_SOURCE_DIR}/res/models/
 	DESTINATION ${CMAKE_BINARY_DIR}/res/models)
-# Add Audios
-file(COPY ${CMAKE_SOURCE_DIR}/res/audio/
-	DESTINATION ${CMAKE_BINARY_DIR}/res/audio)
-# Add Scene files
-file(COPY ${CMAKE_SOURCE_DIR}/res/scene/
-	DESTINATION ${CMAKE_BINARY_DIR}/res/scene)
 
 add_executable(${PROJECT_NAME} ${HEADER_FILES} ${RES_FILES} ${SOURCE_FILES})
 

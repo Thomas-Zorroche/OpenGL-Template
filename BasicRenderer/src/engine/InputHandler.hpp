@@ -2,6 +2,7 @@
 
 #include "engine/Camera.hpp"
 #include <iostream>
+#include <memory>
 #include "GLFW/glfw3.h"
 
 class Camera;
