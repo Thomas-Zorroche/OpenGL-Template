@@ -71,7 +71,6 @@ int main(void)
     // Shaders
     Shader basicShader("res/shaders/Basic.shader");
 
-
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
